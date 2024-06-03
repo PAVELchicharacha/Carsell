@@ -45,8 +45,8 @@ namespace Carsell
 
         private void button1_Click(object sender, EventArgs e)//sort
         {
-            DataGridViewColumn column=null;
-            switch(listbox1.SelectedIndex)
+            DataGridViewColumn column = null;
+            switch (listbox1.SelectedIndex)
             {
                 case 0:
                     column = dataGridViewTextBoxColumn2;
@@ -73,12 +73,12 @@ namespace Carsell
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            button1.Enabled=true;
+            button1.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            carBindingSource.Filter= "model='"+comboBox1.Text+"'";
+            carBindingSource.Filter = "model='" + comboBox1.Text + "'";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -88,20 +88,20 @@ namespace Carsell
 
         private void button4_Click(object sender, EventArgs e)
         {
-            for(int i=0; i<carDataGridView.ColumnCount-1; i++)
+            for (int i = 0; i < carDataGridView.ColumnCount - 1; i++)
             {
                 for (int j = 0; j < carDataGridView.RowCount - 1; j++)
                 {
-                    carDataGridView[i,j].Style.BackColor=Color.White;
+                    carDataGridView[i, j].Style.BackColor = Color.White;
                     carDataGridView[i, j].Style.ForeColor = Color.Black;
                 }
             }
 
-            for(int i = 0; i < carDataGridView.ColumnCount - 1; i++)
+            for (int i = 0; i < carDataGridView.ColumnCount - 1; i++)
             {
-                for( int j = 0;j < carDataGridView.RowCount - 1;j++)
+                for (int j = 0; j < carDataGridView.RowCount - 1; j++)
                 {
-                    if (carDataGridView[i,j].Value.ToString().Contains(textBox1.Text))
+                    if (carDataGridView[i, j].Value.ToString().Contains(textBox1.Text))
                     {
                         carDataGridView[i, j].Style.BackColor = Color.Blue;
                         carDataGridView[i, j].Style.ForeColor = Color.White;
@@ -115,5 +115,7 @@ namespace Carsell
         {
             Close();
         }
+
+
     }
 }
